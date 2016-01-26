@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p v-if="!isEmpty">{{message}}</p>
+    <p v-if="isEmpty">No message to reverse.</p>
+    <p>{{ message }}</p>
+    <p><input v-model="message"></p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+    <button v-on:click="pigLatinize">Pig Latinize Message</button>
+    <br>
+    <br>
+    <br>
+    <input v-model="todoToAdd">
+    <button v-on:click="addToDo">Add ToDo</button>
+    <ul>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+            <button v-on:click="removeToDo($index)">x</button>
+        </li>
+    </ul>
+
+
+</div>
+</body>
+</html>
+
+<!--<div id="demo">
+  <p>{{message}}</p>
+  <input  v-model="message">
+  <button type="button">Click Me!</button>
+</div>
+-->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+
